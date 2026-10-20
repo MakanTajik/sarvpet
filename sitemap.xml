@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- صفحه اصلی سایت -->
+    <url>
+        <loc>https://www.sarvpet.com/index.html</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.sarvpet.com/Logo-7format-01.png</image:loc>
+            <image:title>سروپت - مرکز پخش ملزومات حیوانات خانگی</image:title>
+        </image:image>
+    </url>
+
+    <!-- صفحه لیست مقالات (آرشیو بلاگ) -->
+    <url>
+        <loc>https://www.sarvpet.com/blog.html</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- مقاله نمونه اول: خاک گربه -->
+    <url>
+        <loc>https://www.sarvpet.com/blog/best-cat-litter-buying-guide</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.sarvpet.com/images/cat-litter-1x1.jpg</image:loc>
+            <image:title>راهنمای خرید خاک گربه باکیفیت و بررسی ویژگی‌های آن</image:title>
+        </image:image>
+    </url>
+
+    <!-- مقاله نمونه دوم: غذای خشک سگ -->
+    <url>
+        <loc>https://www.sarvpet.com/blog/dog-dry-food-buying-guide</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.sarvpet.com/images/posts/dog-dry-food-1x1.jpg</image:loc>
+            <image:title>راهنمای جامع خرید غذای خشک سگ و بررسی برندهای بازار</image:title>
+        </image:image>
+    </url>
+
+</urlset>
