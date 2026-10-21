@@ -35,7 +35,7 @@
     </url>
 
     <!-- مقاله نمونه دوم: غذای خشک سگ -->
-    <url>
+    ##<url>
         <loc>https://www.sarvpet.com/blog/dog-dry-food-buying-guide</loc>
         <lastmod>2026-10-20</lastmod>
         <changefreq>monthly</changefreq>
@@ -44,6 +44,6 @@
             <image:loc>https://www.sarvpet.com/images/posts/dog-dry-food-1x1.jpg</image:loc>
             <image:title>راهنمای جامع خرید غذای خشک سگ و بررسی برندهای بازار</image:title>
         </image:image>
-    </url>
+    </url>##
 
 </urlset>
