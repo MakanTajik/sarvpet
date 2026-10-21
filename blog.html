@@ -6,13 +6,11 @@
     <title>مقالات سروپت | سروپت (SarvPet)</title>
     <meta name="description" content="آرشیو مقالات تخصصی پت، راهنمای خرید غذای خشک و ملزومات حیوانات خانگی. مدیریت: اشکان تاجیک - 09124766705">
 
-    <!-- فاوآیکون -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- سیستم‌های آنالیتیکس و کلاریتی -->
     <meta name="google-site-verification" content="TttQ5sBkINg5wG1GalihyqHD0f84NZNxbChgd746wac">
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPCWFPT3');</script>
     <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "yxobrb2fzd");</script>
@@ -20,7 +18,6 @@
     <style>
         :root { --primary-green: #1a5d38; --dark-green: #103b24; --light-green: #e3ebe4; --accent-orange: #f38b2b; --bg-cream: #f7f4ed; --text-dark: #2c3e50; --text-muted: #6c757d; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Vazirmatn', sans-serif; }
-        [dir="ltr"], .en-text, .phone-link, b, strong, span, a { font-family: 'Vazirmatn', sans-serif; }
         body { background-color: var(--bg-cream); color: var(--text-dark); padding: 15px; padding-bottom: 110px; display: flex; flex-direction: column; align-items: center; }
 
         .blog-container { background: #fff; max-width: 580px; width: 100%; padding: 25px 18px; border-radius: 28px; box-shadow: 0 15px 35px rgba(26, 93, 56, 0.1); border: 2px solid var(--light-green); }
@@ -64,26 +61,13 @@
             </div>
         </div>
 
-        <!-- <emdash:loop collection="posts"> -->
-        <a href="{{post.url}}" class="article-card" itemscope itemtype="https://schema.org/BlogPosting">
-            <img src="{{post.image}}" alt="{{post.title}}" class="article-img" itemprop="image">
-            <div class="article-content">
-                <div class="article-meta">
-                    <span itemprop="datePublished"><i class="fa-regular fa-calendar"></i> {{post.date}}</span>
-                    <span class="rating-stars" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                        <i class="fa-solid fa-star"></i> <span itemprop="ratingValue">{{post.rating}}</span> (<span itemprop="reviewCount">{{post.reviewsCount}}</span>)
-                    </span>
-                </div>
-                <h2 class="article-title" itemprop="headline">{{post.title}}</h2>
-                <p class="article-excerpt" itemprop="description">{{post.excerpt}}</p>
-            </div>
-        </a>
-        <!-- </emdash:loop> -->
+        <!-- لیست مقالات داینامیک از فایل JSON -->
+        <div id="blog-posts-container"></div>
 
         <div class="inline-cta">
             <p style="font-size: 12px; margin-bottom: 5px;">برای استعلام موجودی و دریافت کاتالوگ محصولات با ما تماس بگیرید:</p>
             <a href="tel:+989124766705">0912 47 66 705</a>
-            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D8%A7%D8%B2+%D8%B7%D8%B1%DB%8C%D9%82+%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%88%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA%D8%AA%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF." style="background:#25d366; color:#fff; padding:8px 14px; border-radius:10px; display:inline-block; font-size:12px; text-decoration:none; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> مشاوره در واتساپ</a>
+            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D8%A7%D8%B2+%D8%B7%D8%B1%DB%8C%D9%20%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%88%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA%D8%AA%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF." style="background:#25d366; color:#fff; padding:8px 14px; border-radius:10px; display:inline-block; font-size:12px; text-decoration:none; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> مشاوره در واتساپ</a>
         </div>
     </div>
 
@@ -93,5 +77,31 @@
     </div>
 
     <footer class="main-footer">تمامی حقوق محفوظ است © ۱۴۰۵ - مجموعه سروپت (SarvPet)</footer>
+
+    <script>
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const container = document.getElementById('blog-posts-container');
+                container.innerHTML = '';
+                posts.forEach(post => {
+                    container.innerHTML += `
+                        <a href="${post.displayData.url}" class="article-card" itemscope itemtype="https://schema.org/BlogPosting">
+                            <img src="${post.displayData.image}" alt="${post.displayData.imageAlt}" class="article-img" itemprop="image">
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span itemprop="datePublished"><i class="fa-regular fa-calendar"></i> ${post.displayData.date}</span>
+                                    <span class="rating-stars" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                        <i class="fa-solid fa-star"></i> <span itemprop="ratingValue">${post.displayData.rating}</span> (${post.displayData.reviewsCount})
+                                    </span>
+                                </div>
+                                <h2 class="article-title" itemprop="headline">${post.displayData.title}</h2>
+                                <p class="article-excerpt" itemprop="description">${post.displayData.excerpt}</p>
+                            </div>
+                        </a>
+                    `;
+                });
+            }).catch(error => console.error('Error loading posts:', error));
+    </script>
 </body>
 </html>

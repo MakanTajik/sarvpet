@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <script type="application/ld+json">
-{{post.schemaOrg}}
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{post.title}} | سروپت بلاگ</title>
-    <meta name="description" content="{{post.excerpt}}">
+    <title id="page-title">سروپت بلاگ</title>
+    <meta name="description" id="meta-desc" content="">
 
-    <!-- فاوآیکون -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- سیستم‌های آنالیتیکس و کلاریتی -->
     <meta name="google-site-verification" content="TttQ5sBkINg5wG1GalihyqHD0f84NZNxbChgd746wac">
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPCWFPT3');</script>
     <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "yxobrb2fzd");</script>
@@ -23,7 +18,6 @@
     <style>
         :root { --primary-green: #1a5d38; --dark-green: #103b24; --light-green: #e3ebe4; --accent-orange: #f38b2b; --bg-cream: #f7f4ed; --text-dark: #2c3e50; --text-muted: #6c757d; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Vazirmatn', sans-serif; }
-        [dir="ltr"], .en-text, .phone-link, b, strong, span, a { font-family: 'Vazirmatn', sans-serif; }
         body { background-color: var(--bg-cream); color: var(--text-dark); padding: 15px; padding-bottom: 110px; display: flex; flex-direction: column; align-items: center; }
 
         .article-container { background: #fff; max-width: 580px; width: 100%; padding: 25px 18px; border-radius: 28px; box-shadow: 0 15px 35px rgba(26, 93, 56, 0.1); border: 2px solid var(--light-green); }
@@ -44,14 +38,8 @@
 
         .article-body { font-size: 13px; color: #333; line-height: 2.2; text-align: justify; margin-bottom: 25px; }
         .article-body p { margin-bottom: 15px; }
-
-        .related-section { margin-top: 30px; border-top: 1px dashed var(--light-green); padding-top: 15px; }
-        .related-title { font-size: 14px; font-weight: 800; color: var(--primary-green); margin-bottom: 10px; }
-        .related-grid { display: flex; gap: 10px; }
-        .related-card { flex: 1; background: #faf8f5; border: 1px solid #e2dac9; padding: 10px; border-radius: 12px; text-decoration: none; color: inherit; transition: 0.2s; text-align: center; }
-        .related-card:hover { border-color: var(--primary-green); }
-        .related-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; margin-bottom: 6px; }
-        .related-card h4 { font-size: 11px; font-weight: 700; color: var(--primary-green); line-height: 1.5; text-align: right; }
+        .article-body h2 { font-size: 15px; color: var(--primary-green); margin: 20px 0 10px 0; font-weight: 800; }
+        .article-body h3 { font-size: 14px; color: var(--dark-green); margin: 15px 0 8px 0; font-weight: 700; }
 
         .inline-cta { background: linear-gradient(135deg, #185232 0%, #0d2d1b 100%); color: #fff; padding: 18px; border-radius: 18px; text-align: center; margin: 25px 0 15px 0; }
         .inline-cta a { color: #ffd6b3; font-weight: 900; font-size: 20px; text-decoration: none; display: block; margin: 8px 0; direction: ltr; font-family: 'Vazirmatn', sans-serif !important; }
@@ -67,51 +55,69 @@
 
     <div class="article-container" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="header-nav">
-            <a href="blog.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> بازگشت به بلاگ</a>
+            <a href="blog.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> بازگشت به مقالات</a>
             <div class="header-title-wrapper">
                 <img src="Logo- 7format-01.png" alt="سروپت" class="header-logo">
                 <span class="page-brand-tag">سروپت بلاگ</span>
             </div>
         </div>
 
-        <img src="{{post.image}}" alt="{{post.title}}" class="main-article-img" itemprop="image">
-        <h1 class="article-title" itemprop="headline">{{post.title}}</h1>
+        <img id="article-img" src="" alt="" class="main-article-img" itemprop="image">
+        <h1 class="article-title" id="article-title" itemprop="headline"></h1>
 
         <div class="article-meta">
-            <span itemprop="datePublished"><i class="fa-regular fa-calendar"></i> {{post.date}}</span>
+            <span itemprop="datePublished"><i class="fa-regular fa-calendar"></i> <span id="article-date"></span></span>
             <span class="rating-stars" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">{{post.rating}}</span> / ۵
+                <i class="fa-solid fa-star"></i> امتیاز: <span id="article-rating" itemprop="ratingValue"></span> / ۵
             </span>
         </div>
 
-        <div class="article-body" itemprop="articleBody">
-            {{post.content}}
+        <div class="article-body" id="article-body" itemprop="articleBody">
+            <!-- محتوای مقاله اینجا بارگذاری می‌شود -->
         </div>
 
         <div class="inline-cta">
             <p style="font-size: 12px; margin-bottom: 5px;">جهت ثبت سفارش عمده محصولات و دریافت کاتالوگ تماس بگیرید:</p>
             <a href="tel:+989124766705">0912 47 66 705</a>
-            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D8%AC%D9%87%D8%AA+%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%88+%DA%A9%D8%B3%D8%A8+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85." style="background:#25d366; color:#fff; padding:8px 14px; border-radius:10px; display:inline-block; font-size:12px; text-decoration:none; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش در واتساپ</a>
+            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%88%D9%82%D8%AA%20%D8%A8%D8%AE%DB%8C%D8%B1%20%D8%AC%D9%87%D8%AA%20%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%D9%84%DB%8C%D8%B3%D8%AA%20%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA%20%D9%88%20%DA%A9%D8%B3%D8%B8+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85." style="background:#25d366; color:#fff; padding:8px 14px; border-radius:10px; display:inline-block; font-size:12px; text-decoration:none; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش در واتساپ</a>
         </div>
-
-        <section class="related-section">
-            <h3 class="related-title"><i class="fa-solid fa-bookmark" style="color: var(--accent-orange);"></i> مقالات مرتبط پیشنهادی</h3>
-            <div class="related-grid">
-                <!-- <emdash:loop collection="post.related_posts" limit="2"> -->
-                <a href="{{related.url}}" class="related-card">
-                    <img src="{{related.image}}" alt="{{related.title}}">
-                    <h4>{{related.title}}</h4>
-                </a>
-                <!-- </emdash:loop> -->
-            </div>
-        </section>
     </div>
 
     <div class="sticky-contact-footer">
         <a href="tel:+989124766705" class="sticky-phone"><i class="fa-solid fa-phone-volume" style="color:var(--accent-orange);"></i> 0912 47 66 705</a>
-        <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D8%A7%D8%B2+%D8%B7%D8%B1%DB%8C%D9%82+%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%88%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%88+%D9%82%DB%8C%D9%85%D8%AA%D9%87%D8%A7%D8%B4%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF." class="sticky-wa-btn"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش</a>
+        <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D8%A7%D8%20%D8%B7%D8%B1%DB%8C%D9%20%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%88%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%88+%D9%82%DB%8C%D9%85%D8%AA%D9%87%D8%A7%D8%B4%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF." class="sticky-wa-btn"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش</a>
     </div>
 
     <footer class="main-footer">تمامی حقوق محفوظ است © ۱۴۰۵ - مجموعه سروپت (SarvPet)</footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const post = posts.find(p => p.id === articleId) || posts[0];
+
+                // مقداردهی متا تگ‌ها و سئو
+                document.getElementById('page-title').innerText = post.seo.metaTitle;
+                document.getElementById('meta-desc').setAttribute('content', post.seo.metaDescription);
+
+                // مقداردهی محتوای ظاهری صفحه
+                document.getElementById('article-title').innerText = post.displayData.title;
+                document.getElementById('article-date').innerText = post.displayData.date;
+                document.getElementById('article-rating').innerText = post.displayData.rating;
+                const imgEl = document.getElementById('article-img');
+                imgEl.src = post.displayData.image;
+                imgEl.alt = post.displayData.imageAlt;
+                document.getElementById('article-body').innerHTML = post.content;
+
+                // تزریق کدهای اسکیما (Schema.org & FAQ) به هدر صفحه برای سئو
+                const scriptTag = document.createElement('script');
+                scriptTag.type = 'application/ld+json';
+                scriptTag.text = JSON.stringify(post.schemaOrg);
+                document.head.appendChild(scriptTag);
+            }).catch(error => console.error('Error loading article:', error));
+    </script>
 </body>
 </html>

@@ -593,18 +593,12 @@
             </p>
         </section>
 
-        <!-- پیش‌نمایش آخرین مقالات با تصاویر ۱:۱ -->
+        <!-- پیش‌نمایش آخرین مقالات با تصاویر ۱:۱ (بارگذاری داینامیک از posts.json) -->
         <section class="home-blog-section">
             <h2 class="seo-content-title"><i class="fa-solid fa-newspaper" style="color: var(--accent-orange);"></i> آخرین مقالات آموزشی پت</h2>
-            <!-- <emdash:loop collection="posts" limit="2"> -->
-            <a href="{{post.url}}" class="home-blog-card">
-                <img src="{{post.image}}" alt="{{post.title}}" class="home-blog-img">
-                <div class="home-blog-info">
-                    <h3>{{post.title}}</h3>
-                    <p>{{post.excerpt}}</p>
-                </div>
-            </a>
-            <!-- </emdash:loop> -->
+
+            <div id="home-articles-container"></div>
+
             <a href="blog.html" class="btn-more-blog">مشاهده آرشیو کامل مقالات <i class="fa-solid fa-arrow-left"></i></a>
         </section>
 
@@ -622,10 +616,10 @@
                 <a href="tel:+989124766705" class="btn btn-call">
                     <i class="fa-solid fa-phone"></i> تماس
                 </a>
-                <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D9%84%D8%B7%D9%81%D8%A7%D9%8B+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%85%D8%A8%D8%AC%D9%88%D8%AF+%D9%88+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%AE%D8%B1%DB%8C%D8%AF+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF.+%D8%B3%D9%BE%D8%A7%D8%B3%DA%AF%D8%B2%D8%A7%D8%B1%D9%85." class="btn btn-whatsapp" target="_blank" rel="noopener">
+                <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D9%84%D8%B7%D9%81%D8%A7%D9%8B+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%85%D9%88%D8%AC%D9%88%D8%AF+%D9%88+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%AE%D8%B1%DB%8C%D8%AF+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF.+%D8%B3%D9%BE%D8%A7%D8%3B%D8%B2%D8%A7%D8%B1%D9%85." class="btn btn-whatsapp" target="_blank" rel="noopener">
                     <i class="fa-brands fa-whatsapp"></i> واتساپ
                 </a>
-                <a href="https://t.me/saarvpet?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D9%84%D8%B7%D9%81%D8%A7%D9%8B+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%85%D8%AC%D9%88%D8%AF+%D9%88+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%AE%D8%B1%DB%8C%D8%AF+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF.+%D8%B3%D9%BE%D8%A7%D8%B3%DA%AF%D8%B2%D8%A7%D8%B1%D9%85." class="btn btn-telegram" target="_blank" rel="noopener">
+                <a href="https://t.me/saarvpet?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D9%84%D8%B7%D9%81%D8%A7%D9%8B+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%85%D9%88%D8%AC%D9%88%D8%AF+%D9%88+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%AE%D8%B1%DB%8C%D8%AF+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF.+%D8%B3%D9%BE%D8%A7%D8%B3%DA%AF%D8%B2%D8%A7%D8%B1%D9%85." class="btn btn-telegram" target="_blank" rel="noopener">
                     <i class="fa-brands fa-telegram"></i> تلگرام
                 </a>
                 <button onclick="downloadVCard()" class="btn btn-vcard" title="ذخیره شماره در مخاطبین">
@@ -683,6 +677,25 @@
             link.click();
             document.body.removeChild(link);
         }
+
+        // اسکریپت بارگذاری آخرین مقالات در صفحه اصلی
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const container = document.getElementById('home-articles-container');
+                container.innerHTML = '';
+                posts.slice(0, 2).forEach(post => {
+                    container.innerHTML += `
+                        <a href="${post.displayData.url}" class="home-blog-card">
+                            <img src="${post.displayData.image}" alt="${post.displayData.imageAlt}" class="home-blog-img">
+                            <div class="home-blog-info">
+                                <h3>${post.displayData.title}</h3>
+                                <p>${post.displayData.excerpt}</p>
+                            </div>
+                        </a>
+                    `;
+                });
+            }).catch(error => console.error('Error loading home posts:', error));
     </script>
 </body>
 </html>
