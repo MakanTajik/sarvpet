@@ -24,18 +24,18 @@
 
     <!-- مقاله نمونه اول: خاک گربه -->
     <url>
-        <loc>https://www.sarvpet.com/blog/best-cat-litter-buying-guide</loc>
-        <lastmod>2026-10-20</lastmod>
+        <loc>https://www.sarvpet.com/article.html?id=uae-pet-food-market-trends-2026</loc>
+        <lastmod>2026-10-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <image:image>
-            <image:loc>https://www.sarvpet.com/images/cat-litter-1x1.jpg</image:loc>
-            <image:title>راهنمای خرید خاک گربه باکیفیت و بررسی ویژگی‌های آن</image:title>
+            <image:loc>https://www.sarvpet.com/images/uae-market-1x1.webp</image:loc>
+            <image:title>بازار غذای حیوانات خانگی در امارات؛ آمار فروش، برندهای پرفروش و فرصت‌های بازار</image:title>
         </image:image>
     </url>
 
     <!-- مقاله نمونه دوم: غذای خشک سگ -->
-    ##<url>
+    <!-- <url>
         <loc>https://www.sarvpet.com/blog/dog-dry-food-buying-guide</loc>
         <lastmod>2026-10-20</lastmod>
         <changefreq>monthly</changefreq>
@@ -44,6 +44,6 @@
             <image:loc>https://www.sarvpet.com/images/posts/dog-dry-food-1x1.jpg</image:loc>
             <image:title>راهنمای جامع خرید غذای خشک سگ و بررسی برندهای بازار</image:title>
         </image:image>
-    </url>##
+    </url> -->
 
 </urlset>
