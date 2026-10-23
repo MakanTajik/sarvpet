@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">سروپت بلاگ</title>
-    <meta name="description" id="meta-desc" content="">
+    <title>مقالات سروپت | سروپت (SarvPet)</title>
+    <meta name="description" content="آرشیو مقالات تخصصی پت، راهنمای خرید غذای خشک و ملزومات حیوانات خانگی. مدیریت: اشکان تاجیک - 09124766705">
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- کتابخانه Supabase -->
+    <!-- کتابخانه کلاینت Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <meta name="google-site-verification" content="TttQ5sBkINg5wG1GalihyqHD0f84NZNxbChgd746wac">
@@ -23,22 +23,28 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Vazirmatn', sans-serif; }
         body { background-color: var(--bg-cream); color: var(--text-dark); padding: 15px; padding-bottom: 110px; display: flex; flex-direction: column; align-items: center; }
 
-        .blog-container { max-width: 580px; width: 100%; }
-        .blog-header { text-align: center; margin-bottom: 25px; }
-        .blog-header h1 { font-size: 20px; font-weight: 900; color: var(--primary-green); margin-bottom: 5px; }
-        .blog-header p { font-size: 12px; color: var(--text-muted); }
+        .blog-container { background: #fff; max-width: 580px; width: 100%; padding: 25px 18px; border-radius: 28px; box-shadow: 0 15px 35px rgba(26, 93, 56, 0.1); border: 2px solid var(--light-green); }
 
-        .post-card { background: #fff; border-radius: 20px; padding: 18px; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(26, 93, 56, 0.06); border: 2px solid var(--light-green); display: flex; gap: 15px; align-items: center; text-decoration: none; color: inherit; transition: 0.2s; }
-        .post-card:hover { transform: translateY(-3px); border-color: var(--primary-green); }
+        .header-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--light-green); padding-bottom: 12px; position: sticky; top: 0; background: #fff; z-index: 10; flex-direction: row-reverse; }
+        .back-btn { background: var(--light-green); color: var(--primary-green); padding: 6px 12px; border-radius: 10px; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s; }
+        .back-btn:hover { background: var(--primary-green); color: #fff; }
 
-        .post-img { width: 110px; height: 110px; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
-        .post-info { flex-grow: 1; }
+        .header-title-wrapper { display: flex; align-items: center; gap: 8px; }
+        .header-logo { width: 34px; height: auto; object-fit: contain; }
+        .page-title { font-size: 15px; font-weight: 900; color: var(--primary-green); }
 
-        .post-meta-top { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
-        .post-rating { color: #f59e0b; font-weight: 700; }
+        .article-card { display: flex; gap: 12px; background: #faf8f5; border: 1px solid #e2dac9; padding: 12px; border-radius: 16px; margin-bottom: 15px; text-decoration: none; color: inherit; transition: 0.2s; align-items: center; }
+        .article-card:hover { border-color: var(--primary-green); background: #fff; }
+        .article-img { width: 90px; height: 90px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
 
-        .post-title { font-size: 15px; font-weight: 900; color: var(--primary-green); margin-bottom: 6px; line-height: 1.4; }
-        .post-excerpt { font-size: 12px; color: var(--text-muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .article-content { flex: 1; }
+        .article-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+        .article-title { font-size: 14px; font-weight: 800; color: var(--primary-green); margin-bottom: 4px; }
+        .article-excerpt { font-size: 11px; color: #555; line-height: 1.5; }
+        .rating-stars { color: #f59e0b; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; gap: 3px; }
+
+        .inline-cta { background: linear-gradient(135deg, #185232 0%, #0d2d1b 100%); color: #fff; padding: 18px; border-radius: 18px; text-align: center; margin: 20px 0; }
+        .inline-cta a { color: #ffd6b3; font-weight: 900; font-size: 20px; text-decoration: none; display: block; margin: 8px 0; direction: ltr; font-family: 'Vazirmatn', sans-serif !important; }
 
         .sticky-contact-footer { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: calc(100% - 30px); max-width: 524px; background: rgba(16, 59, 36, 0.98); backdrop-filter: blur(16px); padding: 10px 18px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-top: 1px solid rgba(255,255,255,0.2); }
         .sticky-phone { color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; direction: ltr; font-family: 'Vazirmatn', sans-serif !important; }
@@ -50,19 +56,27 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPCWFPT3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="blog-container">
-        <div class="blog-header">
-            <h1>سروپت بلاگ</h1>
-            <p>راهنمای تخصصی تغذیه، نگهداری و بازار حیوانات خانگی</p>
+        <div class="header-nav">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> صفحه اصلی</a>
+            <div class="header-title-wrapper">
+                <img src="Logo- 7format-01.png" alt="سروپت" class="header-logo">
+                <h1 class="page-title">مقالات سروپت</h1>
+            </div>
         </div>
 
-        <div id="posts-list">
-            <p style="text-align:center; color: var(--text-muted); padding: 20px;">در حال بارگذاری مقالات...</p>
+        <!-- لیست مقالات داینامیک از فایل JSON -->
+        <div id="blog-posts-container"></div>
+
+        <div class="inline-cta">
+            <p style="font-size: 12px; margin-bottom: 5px;">برای استعلام موجودی و دریافت کاتالوگ محصولات با ما تماس بگیرید:</p>
+            <a href="tel:+989124766705">0912 47 66 705</a>
+            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D8%A7%D8%B2+%D8%B7%D8%B1%DB%8C%20%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%8BDD%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%88%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA%D8%AA%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%8BDD%DB%8C%D8%AF." style="background:#25d366; color:#fff; padding:8px 14px; border-radius:10px; display:inline-block; font-size:12px; text-decoration:none; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> مشاوره در واتساپ</a>
         </div>
     </div>
 
     <div class="sticky-contact-footer">
         <a href="tel:+989124766705" class="sticky-phone"><i class="fa-solid fa-phone-volume" style="color:var(--accent-orange);"></i> 0912 47 66 705</a>
-        <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%DB%8C%D8%B1+%D8%A7%D8%20%D8%B7%D8%B1%DB%8C%D9%20%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%3B%D8%A7%D8%B+%D9%88+%D9%82%DB%8C%D9%85%D8%AA%D9%87%D8%A7%D8%B4%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B7%D8%A7%D9%84+%D8%A7%D8%B1%D8%B7%D8%A7%D8%B4+%D8%A7%D8%B9%DB%8C%D8%AF." class="sticky-wa-btn"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش</a>
+        <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%D8%B1+%D8%A7%D8%B2+%D8%B7%D8%B1%DB%8C%D9%82+%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%88%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%88+%D9%82%DB%8C%D9%85%D8%AA%D9%87%D8%A7%D8%B4%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%DA%A9%D9%86%DB%8C%D8%AF." class="sticky-wa-btn"><i class="fa-brands fa-whatsapp"></i> دریافت کاتالوگ</a>
     </div>
 
     <footer class="main-footer">تمامی حقوق محفوظ است © ۱۴۰۵ - مجموعه سروپت (SarvPet)</footer>
@@ -75,12 +89,13 @@
         fetch('posts.json')
             .then(response => response.json())
             .then(async posts => {
-                const container = document.getElementById('posts-list');
+                const container = document.getElementById('blog-posts-container');
                 container.innerHTML = '';
 
                 for (const post of posts) {
                     const postId = post.id;
 
+                    // دریافت مستقیم اطلاعات رای واقعی از Supabase
                     let { data } = await _supabase
                         .from('article_ratings')
                         .select('*')
@@ -90,35 +105,31 @@
                     let votesCount = data ? data.votes_count : 0;
                     let totalScore = data ? data.total_score : 0;
 
-                    let ratingText = "";
+                    let ratingHTML = "";
                     if (votesCount > 0) {
                         let avg = (totalScore / votesCount).toFixed(1);
-                        ratingText = `${avg} / ۵ (${votesCount} رای)`;
+                        ratingHTML = `<i class="fa-solid fa-star"></i> <span itemprop="ratingValue">${avg}</span> (${votesCount})`;
                     } else {
-                        ratingText = "رای داده نشده";
+                        ratingHTML = `<i class="fa-solid fa-star"></i> <span itemprop="ratingValue">رای داده نشده</span>`;
                     }
 
-                    const card = document.createElement('a');
-                    card.href = `article.html?id=${postId}`;
-                    card.className = 'post-card';
-                    card.innerHTML = `
-                        <img src="${post.displayData.image}" alt="${post.displayData.imageAlt || ''}" class="post-img">
-                        <div class="post-info">
-                            <div class="post-meta-top">
-                                <span><i class="fa-regular fa-calendar"></i> ${post.displayData.date || ''}</span>
-                                <span class="post-rating"><i class="fa-solid fa-star"></i> ${ratingText}</span>
+                    container.innerHTML += `
+                        <a href="article.html?id=${postId}" class="article-card" itemscope itemtype="https://schema.org/BlogPosting">
+                            <img src="${post.displayData.image}" alt="${post.displayData.imageAlt || ''}" class="article-img" itemprop="image">
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span itemprop="datePublished"><i class="fa-regular fa-calendar"></i> ${post.displayData.date || ''}</span>
+                                    <span class="rating-stars" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                        ${ratingHTML}
+                                    </span>
+                                </div>
+                                <h2 class="article-title" itemprop="headline">${post.displayData.title}</h2>
+                                <p class="article-excerpt" itemprop="description">${post.displayData.excerpt || ''}</p>
                             </div>
-                            <h2 class="post-title">${post.displayData.title}</h2>
-                            <p class="post-excerpt">${post.displayData.excerpt || ''}</p>
-                        </div>
+                        </a>
                     `;
-                    container.appendChild(card);
                 }
-            })
-            .catch(error => {
-                console.error('Error loading posts:', error);
-                document.getElementById('posts-list').innerHTML = '<p style="text-align:center; color:red;">خطا در بارگذاری مقالات.</p>';
-            });
+            }).catch(error => console.error('Error loading posts:', error));
     </script>
 </body>
 </html>

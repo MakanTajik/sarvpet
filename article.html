@@ -140,32 +140,24 @@
                 document.head.appendChild(scriptTag);
             }).catch(error => console.error('Error loading article:', error));
 
-        function setCookie(name, value, days) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        // توابع ایمن کوکی و لوکال استورج دوگانه برای جلوگیری قطعی از تقلب
+        function setClientVoted(postId, score) {
+            localStorage.setItem(`voted_lock_${postId}`, "true");
+            document.cookie = `voted_${postId}=${score}; max-age=31536000; path=/; SameSite=Lax`;
         }
 
-        function getCookie(name) {
-            let nameEQ = name + "=";
-            let ca = document.cookie.split(';');
-            for(let i=0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1,c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-            }
-            return null;
+        function checkClientVoted(postId) {
+            const inLocal = localStorage.getItem(`voted_lock_${postId}`) === "true";
+            const inCookie = document.cookie.split(';').some(item => item.trim().startsWith(`voted_${postId}=`));
+            return inLocal || inCookie;
         }
 
         async function initGlobalRating(postId) {
             const container = document.getElementById('rating-container');
             if (!container) return;
 
-            const hasVotedCookie = getCookie(`voted_${postId}`);
+            // بررسی دوگانه برای اینکه کاربر قبلاً رای داده یا خیر
+            const hasAlreadyVoted = checkClientVoted(postId);
 
             let { data, error } = await _supabase
                 .from('article_ratings')
@@ -176,13 +168,12 @@
             let votesCount = data ? data.votes_count : 0;
             let totalScore = data ? data.total_score : 0;
 
-            if (hasVotedCookie) {
-                // اگر کاربر قبلاً رای داده باشد، ستاره‌ها اصلاً نشان داده نمی‌شوند تا نتواند مجدد رای دهد
+            if (hasAlreadyVoted) {
+                // اگر کاربر رای داده باشد، باکس ستاره‌ها اصلاً ساخته نمی‌شود
                 let average = votesCount > 0 ? (totalScore / votesCount).toFixed(1) : "رای داده نشده";
-                let countText = votesCount > 0 ? `(${votesCount} رای - رای شما ثبت شده)` : `(رای شما ثبت شده)`;
                 container.innerHTML = `
                     <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">${average}</span> / ۵
-                    <span style="font-size: 11px; color: var(--text-muted); font-weight: normal;">${countText}</span>
+                    <span style="font-size: 11px; color: var(--text-muted); font-weight: normal;">(${votesCount} رای - رای شما ثبت شده است)</span>
                 `;
                 return;
             }
@@ -216,16 +207,17 @@
             const stars = container.querySelectorAll('.star-item');
             stars.forEach(star => {
                 star.addEventListener('click', async function () {
-                    // بررسی مجدد کوکی هنگام کلیک برای امنیت بیشتر
-                    if (getCookie(`voted_${postId}`)) {
+                    // قفل فوری در سطح فرانت‌اند برای جلوگیری از کلیک‌های همزمان یا متعدد
+                    if (checkClientVoted(postId)) {
                         alert('شما قبلاً به این مقاله رای داده‌اید.');
+                        location.reload();
                         return;
                     }
 
                     const score = parseInt(this.getAttribute('data-value'));
 
-                    // ثبت کوکی یک ساله
-                    setCookie(`voted_${postId}`, score, 365);
+                    // قفل کردن با localStorage و Cookie به صورت همزمان
+                    setClientVoted(postId, score);
 
                     let newVotesCount = votesCount + 1;
                     let newTotalScore = totalScore + score;
