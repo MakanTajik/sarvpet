@@ -10,255 +10,49 @@
     <meta name="google-site-verification" content="TttQ5sBkINg5wG1GalihyqHD0f84NZNxbChgd746wac">
 
     <!-- ================= Google Tag Manager (GTM) ================= -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPCWFPT3');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l!='l':'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPCWFPT3');</script>
 
     <!-- ================= Microsoft Clarity ================= -->
     <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "yxobrb2fzd");</script>
 
-    <style>
-        :root {
-            --primary-color: #2e7d32;
-            --primary-dark: #1b5e20;
-            --text-color: #333333;
-            --bg-light: #f9f9f9;
-            --border-color: #e0e0e0;
-            --star-color: #ffb300;
-        }
-
-        body {
-            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        .back-btn {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .brand-logo img {
-            height: 35px;
-        }
-
-        .article-main-img {
-            width: 100%;
-            height: auto;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        h1.article-title {
-            font-size: 1.8rem;
-            color: #111;
-            margin-bottom: 15px;
-        }
-
-        .article-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            background: #f5f5f5;
-            padding: 12px 18px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
-        }
-
-        .rating-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .rating-box {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #ffffff;
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-        }
-
-        .stars-interactive {
-            display: inline-flex;
-            flex-direction: row-reverse;
-            gap: 2px;
-        }
-
-        .stars-interactive .star {
-            font-size: 1.4rem;
-            color: #ccc;
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        .stars-interactive .star:hover,
-        .stars-interactive .star:hover ~ .star {
-            color: var(--star-color);
-        }
-
-        .rating-info-text {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .article-body {
-            font-size: 1.05rem;
-            color: #2c2c2c;
-        }
-
-        .article-body img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-        }
-
-        .faq-box {
-            background: #f0f7f4;
-            border-right: 4px solid var(--primary-color);
-            padding: 15px 20px;
-            border-radius: 4px;
-            margin-top: 30px;
-        }
-
-        .faq-box h3 {
-            margin-top: 15px;
-            color: var(--primary-dark);
-        }
-
-        .table-responsive {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-        }
-
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #e8f5e9;
-            color: var(--primary-dark);
-        }
-
-        .cta-section {
-            margin-top: 40px;
-            background: #e8f5e9;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .cta-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 0.85rem;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-    <div class="container" itemscope itemtype="https://schema.org/BlogPosting">
-        <!-- هدر و لوگو -->
-        <div class="nav-header">
-            <a href="blog.html" class="back-btn"><i>←</i> بازگشت به مقالات</a>
-            <div class="brand-logo">
-                <img src="Logo-7format-01.png" alt="سروپت">
+    <div itemscope itemtype="https://schema.org/BlogPosting">
+        <div>
+            <a href="blog.html"><i>←</i> بازگشت به مقالات</a>
+            <div>
+                <img alt="سروپت" src="Logo-7format-01.png">
                 <span>سروپت بلاگ</span>
             </div>
         </div>
 
-        <!-- تصویر شاخص -->
-        <img id="article-img" class="article-main-img" alt="" itemprop="image" src="" style="display:none;">
+        <img id="article-img" alt="" itemprop="image" src="" style="display:none;">
+        <h1 id="article-title" itemprop="headline">در حال بارگذاری مقاله...</h1>
 
-        <!-- عنوان مقاله -->
-        <h1 id="article-title" class="article-title" itemprop="headline">در حال بارگذاری مقاله...</h1>
+        <div>
+            <span itemprop=datePublished><i>📅</i> <span id="article-date">---</span></span>
 
-        <!-- متادیتا و بخش رای‌گیری -->
-        <div class="article-meta">
-            <span>تاریخ انتشار: <strong id="article-date">---</strong></span>
-
-            <!-- کانتینر سیستم رای‌گیری -->
-            <div id="rating-container" class="rating-wrapper">
-                <!-- محتوای تعاملی رای‌گیری با جاوااسکریپت جایگزین می‌شود -->
-            </div>
+            <!-- بخش نمایش و ثبت امتیاز واقعی -->
+            <span id="rating-container" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                <!-- با جاوااسکریپت پر می‌شود -->
+            </span>
         </div>
 
-        <!-- متن محتوای مقاله -->
-        <div id="article-body" class="article-body" itemprop="articleBody">
+        <div id="article-body" itemprop="articleBody">
             <p>لطفاً چند لحظه شکیبا باشید...</p>
         </div>
 
-        <!-- بخش فراخوانی به عمل (CTA) -->
-        <div class="cta-section">
-            <p>جهت ثبت سفارش عمده محصولات و دریافت کاتالوگ با ما در تماس باشید:</p>
-            <a href="tel:09124766705" class="cta-btn">تماس: 09124766705</a>
-            <a href="https://wa.me/989124766705" class="cta-btn" style="background:#25d366;">ثبت سفارش در واتساپ</a>
+        <div>
+            <p>جهت ثبت سفارش عمده محصولات و دریافت کاتالوگ تماس بگیرید:</p>
+            <a href="tel:09124766705">0912 47 66 705</a>
+            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%88%D9%82%D8%AA%20%D8%A8%D8%AE%DB%8C%D8%B1%20%D8%AC%D9%87%D8%AA%20%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%D9%84%DB%8C%D8%B3%D8%AA%20%D9%85%D%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA%20%D9%88%20%DA%A9%D8%B3%D8%A8+%D8%A7%D8%B0%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85."><i>💬</i> ثبت سفارش در واتساپ</a>
         </div>
     </div>
 
     <footer>تمامی حقوق محفوظ است © ۱۴۰۵ - مجموعه سروپت (SarvPet)</footer>
 
-    <!-- اسکریپت اصلی لود مقاله و مدیریت رای‌گیری -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const urlParams = new URLSearchParams(window.location.search);
@@ -321,38 +115,37 @@
             const postId = post.id;
             const userVotedScore = localStorage.getItem(`voted_${postId}`);
 
-            let currentRating = parseFloat(post.displayData?.rating);
+            // جلوگیری از نمایش null و تعیین مقادیر عددی پاک‌سازی شده
+            let baseRating = parseFloat(post.displayData?.rating);
+            let currentRating = !isNaN(baseRating) ? baseRating : 0;
             let reviewsCount = parseInt(post.displayData?.reviewsCount) || 0;
 
-            if (userVotedScore) {
-                const finalRating = currentRating ? currentRating.toFixed(1) : parseFloat(userVotedScore).toFixed(1);
-                const finalCount = reviewsCount > 0 ? reviewsCount : 1;
+            // بررسی رای‌های ذخیره شده محلی اضافی برای این مقاله (اگر کاربران مختلف روی این مرورگر رای داده باشند یا شبیه‌سازی)
+            let extraScoreSum = parseInt(localStorage.getItem(`sum_${postId}`)) || 0;
+            let extraCount = parseInt(localStorage.getItem(`cnt_${postId}`)) || 0;
 
+            let totalReviews = reviewsCount + extraCount;
+            let totalScoreValue = (currentRating * reviewsCount) + extraScoreSum;
+            let finalAvg = totalReviews > 0 ? (totalScoreValue / totalReviews).toFixed(1) : "۰";
+
+            if (userVotedScore) {
+                // اگر خود این کاربر قبلاً رای داده است
                 container.innerHTML = `
-                    <div class="rating-box">
-                        <span style="color: var(--star-color);">★</span>
-                        <span>امتیاز: <strong>${finalRating}</strong> / ۵</span>
-                        <span class="rating-info-text">(${finalCount} رای - رای شما ثبت شده)</span>
-                    </div>
+                    <i>★</i> امتیاز: <span itemprop="ratingValue">${finalAvg}</span> / ۵
+                    <span style="font-size: 0.85rem; color: #666;">(${totalReviews} رای - رای شما ثبت شد)</span>
                 `;
             } else {
-                let ratingSummaryText = "";
-                if (currentRating && reviewsCount > 0) {
-                    ratingSummaryText = `امتیاز فعلی: <strong>${currentRating.toFixed(1)}</strong> (${reviewsCount} رای) - رای دهید:`;
-                } else {
-                    ratingSummaryText = `هنوز امتیازی ثبت نشده. اولین رای را دهید:`;
-                }
+                // اگر کاربر هنوز رای نداده است، هم میانگین کل را می‌بیند و هم می‌تواند رای دهد
+                let ratingDisplay = totalReviews > 0 ? `${finalAvg} / ۵ (${totalReviews} رای)` : `هنوز امتیازی ثبت نشده`;
 
                 container.innerHTML = `
-                    <div class="rating-box">
-                        <span class="rating-info-text">${ratingSummaryText}</span>
-                        <div class="stars-interactive" id="star-rating-box">
-                            <span class="star" data-value="5">★</span>
-                            <span class="star" data-value="4">★</span>
-                            <span class="star" data-value="3">★</span>
-                            <span class="star" data-value="2">★</span>
-                            <span class="star" data-value="1">★</span>
-                        </div>
+                    <i>★</i> امتیاز: <span itemprop="ratingValue">${ratingDisplay}</span>
+                    <div class="interactive-stars" style="display: inline-block; margin-right: 10px; cursor: pointer;">
+                        <span class="star" data-value="5" style="color:#ccc; font-size:1.2rem;">★</span>
+                        <span class="star" data-value="4" style="color:#ccc; font-size:1.2rem;">★</span>
+                        <span class="star" data-value="3" style="color:#ccc; font-size:1.2rem;">★</span>
+                        <span class="star" data-value="2" style="color:#ccc; font-size:1.2rem;">★</span>
+                        <span class="star" data-value="1" style="color:#ccc; font-size:1.2rem;">★</span>
                     </div>
                 `;
 
@@ -361,17 +154,18 @@
                     star.addEventListener('click', function () {
                         const score = parseInt(this.getAttribute('data-value'));
 
+                        // ثبت وضعیت رای دادن کاربر
                         localStorage.setItem(`voted_${postId}`, score);
 
-                        const newCount = reviewsCount + 1;
-                        const oldTotalScore = (currentRating || score) * reviewsCount;
-                        const newAvg = ((oldTotalScore + score) / newCount).toFixed(1);
+                        // ذخیره در مجموع رای‌های محلی برای نمایش صحیح تعداد و میانگین جدید
+                        localStorage.setItem(`sum_${postId}`, extraScoreSum + score);
+                        localStorage.setItem(`cnt_${postId}`, extraCount + 1);
+
+                        let newTotalReviews = totalReviews + 1;
+                        let newFinalAvg = ((totalScoreValue + score) / newTotalReviews).toFixed(1);
 
                         container.innerHTML = `
-                            <div class="rating-box" style="background: #e8f5e9;">
-                                <span style="color: var(--primary-dark);">✓ با تشکر! رای شما (${score}) ثبت شد.</span>
-                                <span class="rating-info-text">(میانگین: ${newAvg} از ۵)</span>
-                            </div>
+                            <i>✓</i> با تشکر! رای شما ثبت شد. امتیاز جدید: <strong>${newFinalAvg}</strong> / ۵ (${newTotalReviews} رای)
                         `;
                     });
                 });
