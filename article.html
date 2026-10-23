@@ -11,6 +11,9 @@
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- کتابخانه کلاینت Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <meta name="google-site-verification" content="TttQ5sBkINg5wG1GalihyqHD0f84NZNxbChgd746wac">
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPCWFPT3');</script>
     <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "yxobrb2fzd");</script>
@@ -36,7 +39,6 @@
         .article-meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-muted); background: #faf8f5; padding: 10px; border-radius: 10px; margin-bottom: 15px; }
         .rating-stars { color: #f59e0b; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
 
-        /* استایل ستاره‌های تعاملی برای ثبت رای واقعی */
         .interactive-rating-stars {
             display: inline-flex;
             flex-direction: row-reverse;
@@ -86,31 +88,32 @@
         <div class="article-meta">
             <span itemprop="datePublished"><i class="fa-regular fa-calendar"></i> <span id="article-date"></span></span>
 
-            <!-- بخش امتیاز و سیستم رای‌گیری واقعی -->
             <span class="rating-stars" id="rating-container" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                <i class="fa-solid fa-star"></i> امتیاز: <span id="article-rating" itemprop="ratingValue">--</span> / ۵
+                <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">در حال بارگذاری...</span>
             </span>
         </div>
 
-        <div class="article-body" id="article-body" itemprop="articleBody">
-            <!-- محتوای مقاله اینجا بارگذاری می‌شود -->
-        </div>
+        <div class="article-body" id="article-body" itemprop="articleBody"></div>
 
         <div class="inline-cta">
             <p style="font-size: 12px; margin-bottom: 5px;">جهت ثبت سفارش عمده محصولات و دریافت کاتالوگ تماس بگیرید:</p>
             <a href="tel:+989124766705">0912 47 66 705</a>
-            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%88%D9%82%D8%AA%20%D8%A8%D8%AE%DB%8C%D8%B1%20%D8%AC%D9%87%D8%AA%20%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%D9%84%DB%8C%D8%B3%D8%AA%20%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%B7%20%D9%88%20%DA%A9%D8%B3%D8%B8+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85." style="background:#25d366; color:#fff; padding:8px 14px; border-radius:10px; display:inline-block; font-size:12px; text-decoration:none; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش در واتساپ</a>
+            <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%88%D9%82%D8%AA%20%D8%A8%D8%AE%DB%8C%D8%B1%20%D8%AC%D9%87%D8%AA%20%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%D9%84%DB%8C%D8%B3%D8%AA%20%D9%85%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA%20%D9%88%20%DA%A9%D8%B3%D8%B8+%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85." style="background:#25d366; color:#fff; padding:8px 14px; border-radius:10px; display:inline-block; font-size:12px; text-decoration:none; margin-top:5px;"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش در واتساپ</a>
         </div>
     </div>
 
     <div class="sticky-contact-footer">
         <a href="tel:+989124766705" class="sticky-phone"><i class="fa-solid fa-phone-volume" style="color:var(--accent-orange);"></i> 0912 47 66 705</a>
-        <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%DB%8C%D8%B1+%D8%A7%D8%20%D8%B7%D8%B1%DB%8C%D9%20%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%88%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%B3%D8%AA+%D9%85%DB%8C%D8%AD%D8%B5%D9%88%D9%84%D8%A7%D8%AA+%D9%88+%D9%82%DB%8C%D9%85%D8%ET%D9%87%D8%A7%D8%B4%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B7%D8%A7%D9%84+%D8%A7%D8%B1%D8%B3%D8%A7%D9%84+%D8%A7%D8%B9%DB%8C%D8%AF." class="sticky-wa-btn"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش</a>
+        <a href="https://wa.me/989124766705?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C+%D9%88%D9%82%D8%AA+%D8%A8%D8%AE%DB%8C%DB%8C%D8%B1+%D8%A7%D8%20%D8%B7%D8%B1%DB%8C%D9%20%D8%B3%D8%A7%DB%8C%D8%AA%D8%AA%D9%88%D9%86+%D9%BE%DB%8C%D8%A7%D9%85+%D9%85%DB%8C%E2%80%8C%D8%AF%D9%85.+%D9%85%D9%85%D9%86%D9%86+%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D9%85+%D9%84%DB%8C%D8%3B%D8%A7%D8%B+%D9%88+%D9%82%DB%8C%D9%85%D8%AA%D9%87%D8%A7%D8%B4%D9%88%D9%86+%D8%B1%D9%88+%D8%A8%D8%B1%D8%A7%D9%85+%D8%A7%D8%B1%D8%B7%D8%A7%D9%84+%D8%A7%D8%B1%D8%B7%D8%A7%D8%B4+%D8%A7%D8%B9%DB%8C%D8%AF." class="sticky-wa-btn"><i class="fa-brands fa-whatsapp"></i> ثبت سفارش</a>
     </div>
 
     <footer class="main-footer">تمامی حقوق محفوظ است © ۱۴۰۵ - مجموعه سروپت (SarvPet)</footer>
 
     <script>
+        const SUPABASE_URL = 'https://hvynddpsueccjpvpktin.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2eW5kZHBzdWVjY2pwdnBrdGluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI3NTIzNTEsImV4cCI6MjEwODMyODM1MX0.lpUlNkWCRabdKoJGXcbCgoNEHjfjz_GZE9uSR99rp94';
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
         const urlParams = new URLSearchParams(window.location.search);
         const articleId = urlParams.get('id');
 
@@ -119,11 +122,8 @@
             .then(posts => {
                 const post = posts.find(p => p.id === articleId) || posts[0];
 
-                // مقداردهی متا تگ‌ها و سئو
                 document.getElementById('page-title').innerText = post.seo.metaTitle;
                 document.getElementById('meta-desc').setAttribute('content', post.seo.metaDescription);
-
-                // مقداردهی محتوای ظاهری صفحه
                 document.getElementById('article-title').innerText = post.displayData.title;
                 document.getElementById('article-date').innerText = post.displayData.date;
 
@@ -132,48 +132,72 @@
                 imgEl.alt = post.displayData.imageAlt;
                 document.getElementById('article-body').innerHTML = post.content;
 
-                // مدیریت سیستم رای واقعی و جلوگیری از نمایش null
-                setupRealRating(post);
+                initGlobalRating(post.id);
 
-                // تزریق کدهای اسکیما (Schema.org & FAQ) به هدر صفحه برای سئو
                 const scriptTag = document.createElement('script');
                 scriptTag.type = 'application/ld+json';
                 scriptTag.text = JSON.stringify(post.schemaOrg);
                 document.head.appendChild(scriptTag);
             }).catch(error => console.error('Error loading article:', error));
 
-        function setupRealRating(post) {
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i=0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,p=c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        async function initGlobalRating(postId) {
             const container = document.getElementById('rating-container');
             if (!container) return;
 
-            const postId = post.id;
-            const userVotedScore = localStorage.getItem(`voted_${postId}`);
+            const hasVotedCookie = getCookie(`voted_${postId}`);
 
-            // استخراج پایه امتیاز و تعداد آرا از JSON بدون مقدار null
-            let baseRating = parseFloat(post.displayData?.rating);
-            let initialRating = !isNaN(baseRating) ? baseRating : 0;
-            let initialReviewsCount = parseInt(post.displayData?.reviewsCount) || 0;
+            let { data, error } = await _supabase
+                .from('article_ratings')
+                .select('*')
+                .eq('article_id', postId)
+                .single();
 
-            // دریافت رای‌های ثبت‌شده جدید توسط کاربران از localStorage
-            let extraScoreSum = parseInt(localStorage.getItem(`sum_${postId}`)) || 0;
-            let extraCount = parseInt(localStorage.getItem(`cnt_${postId}`)) || 0;
+            let votesCount = data ? data.votes_count : 0;
+            let totalScore = data ? data.total_score : 0;
 
-            let totalReviews = initialReviewsCount + extraCount;
-            let totalScoreValue = (initialRating * initialReviewsCount) + extraScoreSum;
-            let currentAverage = totalReviews > 0 ? (totalScoreValue / totalReviews).toFixed(1) : "ثبت‌نشده";
-
-            if (userVotedScore) {
-                // اگر این کاربر قبلاً رای داده است
+            if (votesCount === 0) {
                 container.innerHTML = `
-                    <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">${currentAverage}</span> / ۵
-                    <span style="font-size: 11px; color: var(--text-muted); font-weight: normal;">(${totalReviews} رای - رای شما ثبت شده)</span>
+                    <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">رای داده نشده</span>
+                    <div class="interactive-rating-stars" id="star-box">
+                        <span class="star-item" data-value="5">★</span>
+                        <span class="star-item" data-value="4">★</span>
+                        <span class="star-item" data-value="3">★</span>
+                        <span class="star-item" data-value="2">★</span>
+                        <span class="star-item" data-value="1">★</span>
+                    </div>
                 `;
-            } else {
-                // اگر کاربر جدید است (چه دیگران رای داده باشند چه اولین نفر باشد)
-                let displayRatingText = totalReviews > 0 ? `${currentAverage} / ۵ (${totalReviews} رای)` : `هنوز امتیازی ثبت نشده`;
-
+            } else if (hasVotedCookie) {
+                let average = (totalScore / votesCount).toFixed(1);
                 container.innerHTML = `
-                    <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">${displayRatingText}</span>
+                    <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">${average}</span> / ۵
+                    <span style="font-size: 11px; color: var(--text-muted); font-weight: normal;">(${votesCount} رای - رای شما ثبت شده)</span>
+                `;
+                return;
+            } else {
+                let average = (totalScore / votesCount).toFixed(1);
+                container.innerHTML = `
+                    <i class="fa-solid fa-star"></i> امتیاز: <span itemprop="ratingValue">${average} / ۵ (${votesCount} رای)</span>
                     <span style="font-size: 11px; font-weight: normal; margin-right: 4px;">رای دهید:</span>
                     <div class="interactive-rating-stars" id="star-box">
                         <span class="star-item" data-value="5">★</span>
@@ -183,28 +207,37 @@
                         <span class="star-item" data-value="1">★</span>
                     </div>
                 `;
-
-                const stars = container.querySelectorAll('.star-item');
-                stars.forEach(star => {
-                    star.addEventListener('click', function () {
-                        const score = parseInt(this.getAttribute('data-value'));
-
-                        // ثبت اینکه این مرورگر رای داده است
-                        localStorage.setItem(`voted_${postId}`, score);
-                        localStorage.setItem(`sum_${postId}`, extraScoreSum + score);
-                        localStorage.setItem(`cnt_${postId}`, extraCount + 1);
-
-                        let newTotalReviews = totalReviews + 1;
-                        let newAverage = ((totalScoreValue + score) / newTotalReviews).toFixed(1);
-
-                        container.innerHTML = `
-                            <i class="fa-solid fa-check" style="color:var(--primary-green);"></i>
-                            <span style="font-size: 11px; font-weight: bold; color: var(--primary-green);">با تشکر! رای شما ثبت شد.</span>
-                            <span style="font-size: 11px; color: var(--text-muted);">میانگین: ${newAverage} (${newTotalReviews} رای)</span>
-                        `;
-                    });
-                });
             }
+
+            const stars = container.querySelectorAll('.star-item');
+            stars.forEach(star => {
+                star.addEventListener('click', async function () {
+                    const score = parseInt(this.getAttribute('data-value'));
+
+                    setCookie(`voted_${postId}`, score, 365);
+
+                    let newVotesCount = votesCount + 1;
+                    let newTotalScore = totalScore + score;
+                    let newAverage = (newTotalScore / newVotesCount).toFixed(1);
+
+                    if (!data) {
+                        await _supabase.from('article_ratings').insert([
+                            { article_id: postId, total_score: score, votes_count: 1 }
+                        ]);
+                    } else {
+                        await _supabase.from('article_ratings').update({
+                            total_score: newTotalScore,
+                            votes_count: newVotesCount
+                        }).eq('article_id', postId);
+                    }
+
+                    container.innerHTML = `
+                        <i class="fa-solid fa-check" style="color:var(--primary-green);"></i>
+                        <span style="font-size: 11px; font-weight: bold; color: var(--primary-green);">با تشکر! رای شما ثبت شد.</span>
+                        <span style="font-size: 11px; color: var(--text-muted);">میانگین: ${newAverage} (${newVotesCount} رای)</span>
+                    `;
+                });
+            });
         }
     </script>
 </body>
